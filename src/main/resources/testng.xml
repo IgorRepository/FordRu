@@ -1,23 +1,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="FirstSuite" parallel="tests" thread-count="2">
+<suite name="FirstSuite" verbose="1">
 
-<test name="IE">
+    <test name="IE">
         <!--<parameter name="browser" value="IE"/>-->
-        <!--<classes>-->
-            <!--<class name="com.wallmartRegistraton.NegativeRegistration" />-->
-        <!--</classes>-->
     </test>
+
 
     <test name="RunOnChrome">
         <parameter name="browser" value="chrome"/>
         <groups>
             <run>
                 <exclude name="disable test"></exclude>
+                <!--<include name="working test"></include>-->
             </run>
         </groups>
         <classes>
-            <class name="com.FordRu.TestRun.AllTabsFordFocusTest" />
+            <class name="comFordRu.TestRun.FiestaTabDesignTest" />
         </classes>
     </test>
 </suite>

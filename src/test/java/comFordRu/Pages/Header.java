@@ -1,6 +1,6 @@
-package com.FordRu.Pages;
+package comFordRu.Pages;
 
-import com.FordRu.BaseClass.BasePageObject;
+import comFordRu.BaseClass.BasePageObject;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,15 +13,22 @@ public class Header extends BasePageObject<Header> {
 
     private WebElement headerPopUpAvtomobili = find(By.xpath("//a[@href='/Cars' and contains (@class, 'mainTopNav om_he_pv_li')]"));
     private By headerBtnFocus = By.xpath("//a[@tabindex='1' and contains (@id, 'linkinnerWrap1')]");
+    private By headerBtnFiesta = By.xpath("//a[@tabindex='0' and contains (@id, 'linkinnerWrap0')]");
 
     public Header(WebDriver driver, Logger log) {
         super(driver, log);
     }
 
-    public Focus goToFocusPageViaHeaderMainPage() {
+    public TabsOnPassengerCarPage goToFocusPageViaHeaderMainPage() {
         mouseOver(headerPopUpAvtomobili);
         click(headerBtnFocus);
-        return new Focus(driver, log);
+        return new TabsOnPassengerCarPage(driver, log);
+    }
+
+    public TabsOnPassengerCarPage goToFiestaPageViaHeaderMainPage() {
+        mouseOver(headerPopUpAvtomobili);
+        click(headerBtnFiesta);
+        return new TabsOnPassengerCarPage(driver, log);
     }
 
 }

@@ -1,6 +1,6 @@
-package com.FordRu.BaseClass;
+package comFordRu.BaseClass;
 
-import com.FordRu.Pages.Header;
+import comFordRu.Pages.Header;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -24,7 +24,7 @@ public class BasePageObject<T> {
     public BasePageObject(WebDriver driver, Logger log) {
         this.driver = driver;
         this.log = log;
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 200);
         action = new Actions(driver);
     }
 

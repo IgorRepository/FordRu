@@ -1,4 +1,4 @@
-package com.FordRu.BaseClass;
+package comFordRu.BaseClass;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -7,7 +7,6 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
 
 /**
  * Created by 1 on 08.05.2018.
@@ -23,23 +22,11 @@ public class BaseTest {
         log = Logger.getLogger(testName);
     }
 
-    @Parameters({"browser"})
     @BeforeMethod()
-    protected void setUpMethod(String browser) {
-        switch (browser) {
-            case  "IE":
-//                log.info("IeStartWork");
-//                System.setProperty("webdriver.ie.driver", "C:\\Users\\1\\Downloads\\IEDriver.exe");
-//                driver = new InternetExplorerDriver();
-                break;
-
-            case "chrome":
-                log.info("ChromeStartWork");
-                driver = new ChromeDriver();
-                break;
-        }
+    protected void setUpMethod() {
+        log.info("ChromeStartWork");
+        driver = new ChromeDriver();
         driver.get("http://www.ford.ru/");
-
     }
 
     @AfterMethod()
